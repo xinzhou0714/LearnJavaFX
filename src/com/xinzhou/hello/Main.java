@@ -2,6 +2,7 @@ package com.xinzhou.hello;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -17,8 +18,12 @@ public class Main extends Application {
 
         System.out.println("start()...");
 
-        Label label = new Label("Hallo Word");
-        BorderPane pane =new BorderPane(label);
+        Button button = new Button("Open Website");
+        BorderPane pane =new BorderPane(button);
+
+        button.setOnAction( event -> {
+            getHostServices().showDocument("https://www.google.de/");
+        });
 
         Scene scene = new Scene(pane ,600,480);
 
